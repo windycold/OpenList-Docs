@@ -40,7 +40,7 @@ New versions (V3 and later) are not compatible with V2, so you need to re-add yo
 ## 为什么我在日志中看到 `failed get aria2 version` 错误？ { lang="zh-CN" }
 
 :::en
-Because you haven't installed aria2 or the settings of aria2 are wrong. Don't worry, it won't affect the use of Alist, you can ignore it.
+Because you haven't installed aria2 or the settings of aria2 are wrong. Don't worry, it won't affect the use of OpenList, you can ignore it.
 :::
 :::zh-CN
 因为你没有安装 aria2 或者 aria2 的设置不对。不用担心，它不会影响 OpenList 的使用，你可以忽略它。
@@ -188,6 +188,17 @@ Same as pdf preview, requires https+cors support,and:
 ## Why can't I download files after add `AliyunDirve` storage and get `InvalidArgument` error? { lang="en" }
 
 ## 为什么添加了 `AliyunDrive` 存储后下载不了文件，出现 `InvalidArgument` 错误？ { lang="zh-CN" }
+:::en
+::: warning
+This is an outdated driver that has been abandoned, is no longer maintained, and will be removed in future versions. We recommend using the officially supported Aliyundrive Open.
+[**Click to view this guide**](../guide/drivers/aliyundrive_open.md)
+:::
+
+:::cn
+::: warning
+这是一个过时的驱动，已废弃，不再维护，并将在未来的版本中删除。我们建议使用官方支持的阿里云盘Open驱动。
+[**点击查看这篇说明**](../guide/drivers/aliyundrive_open.md)
+:::
 
 :::en
 Due to referrer restrictions, mobile tokens must be used if you don't open any proxy.
@@ -212,29 +223,29 @@ There is a half-hour cache by default, which can be modified on the Add Storage 
 ## 为什么我通过在终端输入`./openlist admin`获取的密码还是不正确？ { lang="zh-CN" }
 
 :::en
-Check whether the directory you run `./openlist admin` and start openlist is the same. openlist reads the configuration in the current directory where you run the program by default, so running in different directorys will result in different data being read.
+Check whether the directory you run `./openlist admin` and start OpenList is the same. OpenList reads the configuration in the current directory where you run the program by default, so running in different directorys will result in different data being read.
 
 ---
 
-- **Here take Windows as an example**: For example, your Alist file is in the **`D:\Test\Alist\`** folder, and then you directly start the CMD command running window on the desktop, and then put the D drive Drag the Alist inside to the command running window to start, and then the configuration file it generates is actually in **`C:\Windows\System32`** here (because CMD is here by default), and then you Obtaining the password is also obtaining the password in this folder. At the same time, because Alist reads the password in the configuration file in the same directory as Alist, it is naturally wrong for you to log in with the password.
+- **Here take Windows as an example**: For example, your OpenList file is in the **`D:\Test\Alist\`** folder, and then you directly start the CMD command running window on the desktop, and then put the D drive Drag the OpenList inside to the command running window to start, and then the configuration file it generates is actually in **`C:\Windows\System32`** here (because CMD is here by default), and then you Obtaining the password is also obtaining the password in this folder. At the same time, because OpenList reads the password in the configuration file in the same directory as OpenList, it is naturally wrong for you to log in with the password.
   - ![faq](/img/faq/alist-admin.png)
-- Solution: You need to go to the folder where Alist is located to start or check the password, for example, the above is in **`D:\Test\Alist\`**, you have to manually go to this folder and then enter Enter the startup command or the command to view the password to obtain the correct password
-  - **Windows**: After going to the directory where Alist is located, enter CMD in the top address bar and press Enter, and then use the command to obtain the password
+- Solution: You need to go to the folder where OpenList is located to start or check the password, for example, the above is in **`D:\Test\Alist\`**, you have to manually go to this folder and then enter Enter the startup command or the command to view the password to obtain the correct password
+  - **Windows**: After going to the directory where OpenList is located, enter CMD in the top address bar and press Enter, and then use the command to obtain the password
     - ![faq](/img/faq/alist-admin.gif)
-  - **Linux**: Use the CD command to go to the directory where Alist is located to get the correct password
+  - **Linux**: Use the CD command to go to the directory where OpenList is located to get the correct password
 
 :::
 :::zh-CN
-检查你运行`./openlist admin`和启动alist的目录是否相同。 alist默认会读取你运行程序的当前目录下的配置，所以在不同的目录下运行会导致读取的数据不同。
+检查你运行`./openlist admin`和启动OpenList的目录是否相同。 OpenListt默认会读取你运行程序的当前目录下的配置，所以在不同的目录下运行会导致读取的数据不同。
 
 ---
 
-- **这里拿Windows举例**：例如你的Alist文件在 **`D:\Test\Alist\`** 这个文件夹里面，然后你直接在桌面启动了CMD命令运行窗口，然后把D盘里面的Alist拖动到命令运行窗口里面启动，然后它生成的配置文件实际上你现在的目录是在 **`C:\Windows\System32`** 这里（因为CMD默认是在这里），然后你获取密码也是获取了这个文件夹里面的密码，同时呢因为Alist它读取的是和Alist同级目录下的配置文件里面的密码，你去登录密码自然不对。
+- **这里拿Windows举例**：例如你的OpenList文件在 **`D:\Test\Alist\`** 这个文件夹里面，然后你直接在桌面启动了CMD命令运行窗口，然后把D盘里面的OpenList拖动到命令运行窗口里面启动，然后它生成的配置文件实际上你现在的目录是在 **`C:\Windows\System32`** 这里（因为CMD默认是在这里），然后你获取密码也是获取了这个文件夹里面的密码，同时呢因为OpenList它读取的是和OpenList同级目录下的配置文件里面的密码，你去登录密码自然不对。
   - ![faq](/img/faq/alist-admin.png)
-- 解决办法：你要到Alist所在的文件夹里面去在启动或者查看密码，例如上面的是在 **`D:\Test\Alist\`** ，你就要手动去这个文件夹里面然后在输入启动命令或者查看密码的命令即可获取正确的密码
-  - **Windows**：去Alist所在的目录后在顶部地址栏输入 CMD回车这样然后再使用命令获取密码
+- 解决办法：你要到OpenList所在的文件夹里面去在启动或者查看密码，例如上面的是在 **`D:\Test\Alist\`** ，你就要手动去这个文件夹里面然后在输入启动命令或者查看密码的命令即可获取正确的密码
+  - **Windows**：去OpenList所在的目录后在顶部地址栏输入 CMD回车这样然后再使用命令获取密码
     - ![faq](/img/faq/alist-admin.gif)
-  - **Linux**：使用CD命令 到Alist所在的目录即可获取正确密码
+  - **Linux**：使用CD命令 到OpenList所在的目录即可获取正确密码
 
 :::
 
@@ -243,10 +254,12 @@ Check whether the directory you run `./openlist admin` and start openlist is the
 ## 为什么提示 System error: SyntaxError: Invalid regular expression: /?/: Nothing to repeat { lang="zh-CN" }
 
 :::en
-Your Tampermonkey answering plug-in conflicts, just close it [**For details, click to view**](https://github.com/alist-org/alist/discussions/2399)
+This is caused by the conflict between some scripts in the Tampermonkey extension and the webpage code, such as some automatic answering scripts.
+Please check and disable the relevant scripts on your own.
 :::
 :::zh-CN
-你的油猴答题插件冲突了，关闭了即可[**详情查看点击查看**](https://github.com/alist-org/alist/discussions/2399)
+由于油猴插件中的某些脚本与网页代码冲突导致的，例如某些自动答题脚本。
+请自行检查并禁用相关脚本。
 
 :::
 
@@ -318,11 +331,9 @@ flowchart LR
 
 :::en
 Raidrive is because uploading a file will create an empty file in advance, and Baidu Netdisk does not allow the creation of an empty file.
-v2 can succeed because v2 ignores empty file uploads.
 :::
 :::zh-CN
 Raidrive 是因为上传文件会预先创建一个空文件 而百度网盘不允许创建空文件。
-v2可以成功是因为v2会忽略空文件上传。
 :::
 
 ## Why is the Terabox mounted successfully but the content is not displayed? { lang="en" }
@@ -332,21 +343,21 @@ v2可以成功是因为v2会忽略空文件上传。
 :::en
 Because **`Terabox`** restricts IP, if you access it from a non-overseas IP, you cannot access it, and naturally the content will not be displayed.
 
-(Overseas machines can be used. If you have to use local machines (or domestic machines) to build, you can find a way to let Alist eat **proxy**)
+(Overseas machines can be used. If you have to use local machines (or domestic machines) to build, you can find a way to let OpenList eat **proxy**)
 
-Cases where it might be useful: **https://github.com/alist-org/alist/discussions/3026**
+**Note: Check the relevant settings to ensure that traffic related to '*.terabox.com' goes through the **proxy****
 :::
 :::zh-CN
 因为 **`Terabox`** 限制IP，如果你是本机非海外IP访问，是无法访问的，自然不会显示内容。
 
-（可以用海外的机器，如果非得用本机(或者国内的机器)搭建，哪你自己想办法让Alist吃到**proxy**就可以）
+（可以用海外的机器，如果非得用本机(或者国内的机器)搭建，哪你自己想办法让OpenList吃到**proxy**就可以）
 
-可能有用的案例参考：**https://github.com/alist-org/alist/discussions/3026**
+**注意：检查相关设置以确保'*.terabox.com'相关流量经过**proxy****
 :::
 
-## Open Alist prompt System error: TypeError: n.replaceAll is not a function? { lang="en" }
+## Open OpenList prompt System error: TypeError: n.replaceAll is not a function? { lang="en" }
 
-## 打开 Alist 提示 System error: TypeError:n.replaceAll is not a function？ { lang="zh-CN" }
+## 打开 OpenList 提示 System error: TypeError:n.replaceAll is not a function？ { lang="zh-CN" }
 
 :::en
 Your browser kernel version is too low, just add the following to the custom head.
@@ -386,12 +397,12 @@ If you think it is too slow, you can change to Ali Cloud
 :::en
 ![faq](/img/faq/error.png)
 
-If you enter the wrong password for 6 consecutive logins, it will be locked, and you can reset it by restarting Alist.
+If you enter the wrong password for 6 consecutive logins, it will be locked, and you can reset it by restarting OpenList.
 :::
 :::zh-CN
 ![faq](/img/faq/error.png)
 
-连续登录输入6次密码错误就会锁定，重启Alist即可重置。
+连续登录输入6次密码错误就会锁定，重启OpenList即可重置。
 :::
 
 ## When adding a file to upload, there is an option of "add as task", what does it do? { lang="en" }
@@ -400,14 +411,14 @@ If you enter the wrong password for 6 consecutive logins, it will be locked, and
 
 :::en
 
-- After checking, upload to the server (the machine where Alist is built), and then when uploaded by the server to the network disk, it seems to be visible in the background (it seems to be like this)
+- After checking, upload to the server (the machine where OpenList is built), and then when uploaded by the server to the network disk, it seems to be visible in the background (it seems to be like this)
 - You will not see it if it is not checked. For details, you can see the problem in the picture below.
 
 ![faq](/img/faq/add.jpeg)
 :::
 :::zh-CN
 
-- 勾选后上传到服务器(搭建Alist的机器)，再由服务器上传时到网盘时后台似乎能看到（好像是这样的）
+- 勾选后上传到服务器(搭建OpenList的机器)，再由服务器上传时到网盘时后台似乎能看到（好像是这样的）
 - 未勾选不会看到，具体的大家可以看下图应该能看出什么问题.
 
 ![faq](/img/faq/add.jpeg)
@@ -433,10 +444,10 @@ What? Don't know the verification code? [**Click to view this guide**](../guide/
 ## 使用 **`sqlite3`** 发现 data 文件夹里面出现 data.db-shm、data.db-wal 两个多的文件 { lang="zh-CN" }
 
 :::en
-[**Click to view detailed instructions**](https://stackoverflow.com/questions/7778723/what-are-the-db-shm-and-db-wal-extensions-in-sqlite-databases)
+These are temporary files created by SQLite in WAL mode to support database transaction processing and concurrent access. The .db-shm file is a shared memory file used to store temporary data, while the .db-wal file is a write-ahead log file that records transaction changes for rollback in case of transaction failure. These two files are associated with the .db file, and it is not recommended to delete them arbitrarily.
 :::
 :::zh-CN
-[**点击查看详细说明**](https://stackoverflow.com/questions/7778723/what-are-the-db-shm-and-db-wal-extensions-in-sqlite-databases)
+这是SQLite在WAL模式下创建的临时文件，用于支持数据库的事务处理和并发访问。.db-shm是一个共享内存文件，用于存储临时数据，而.db-wal是一个写前日志文件，用于记录事务的变更，以便在事务失败时进行回滚。这两个文件和.db文件相关联，不建议随意删除。
 :::
 
 ## **How do I set it so that visitors can only see the content after logging in?** { lang="en" }
@@ -527,17 +538,15 @@ What is the use of creating this blank folder? It can be used in conjunction wit
 
 ## lib64/libc.so.6: version `GLIBC_2.28' not found (required by ./openlist) or accept: function not implemented { lang="en" }
 
-## lib64/libc.so.6: version `GLIBC_2.28' not found (required by ./alist)或者 accept: function not implemented { lang="zh-CN" }
+## lib64/libc.so.6: version `GLIBC_2.28' not found (required by ./openlist)或者 accept: function not implemented { lang="zh-CN" }
 
 :::en
-Consider using the **musl** version as an alternative due to the version of the **glibc** on your platform is too low
+Consider using the **musl** version as an alternative due to the version of the **glibc** on your platform is too low,or use docker version.
 
-Reference instructions：[#2295](https://github.com/alist-org/alist/discussions/2295)，[#322](https://github.com/alist-org/alist/issues/322#issuecomment-1010601181)
 :::
 :::zh-CN
-考虑使用 **musl** 版本作为替代，因为在您的平台上的 **glibc** 版本太低
+考虑使用 **musl** 版本作为替代，因为在您的平台上的 **glibc** 版本太低,或者使用docker版本。
 
-参考说明：[#2295](https://github.com/alist-org/alist/discussions/2295)，[#322](https://github.com/alist-org/alist/issues/322#issuecomment-1010601181)
 :::
 
 ## What is the extra sign parameter after the file now? { lang="en" }
@@ -545,10 +554,10 @@ Reference instructions：[#2295](https://github.com/alist-org/alist/discussions/
 ## 现在文件后面多了个 sign 的参数是干嘛的？ { lang="zh-CN" }
 
 :::en
-Encrypted for account security, you can view the details by [click to view](../config/global.md#Sign all)
+Encrypted for account security, you can view the details by [click to view](../configuration/global.md#sign-all)
 :::
 :::zh-CN
-加密了为了账号安全一些，查看详情可以[点击查看](../config/global.md#签名所有)
+加密了为了账号安全一些，查看详情可以[点击查看](../configuration/global.md#签名所有)
 :::
 
 ## Prompt when adding Aliyun drive (shared) Prompt Post "https://auth.aliyundrive.com/v2/account/token": net/http: TLS handshake timeout { lang="en" }
@@ -589,14 +598,14 @@ Workaround:
 :::en
 ![faq](/img/faq/123error.png)
 
-There is a high probability that your device that builds Alist is temporarily blocked, frozen, blocked, or restricted. Don't mount it yet, wait a few hours and try again or wait a day
+There is a high probability that your device that builds OpenList is temporarily blocked, frozen, blocked, or restricted. Don't mount it yet, wait a few hours and try again or wait a day
 
 (Conclusions from the above questions have been tested)
 :::
 :::zh-CN
 ![faq](/img/faq/123error.png)
 
-大概率是你的这台搭建Alist的设备 暂时被 拉黑，冻结，封禁，限制了。先不要挂载了，等几个小时再试试看或者等一天
+大概率是你的这台搭建OpenList的设备 暂时被 拉黑，冻结，封禁，限制了。先不要挂载了，等几个小时再试试看或者等一天
 
 （以上问题已经经过测试得出的结论）
 :::
@@ -621,14 +630,14 @@ Because PikPak's server does not set the filename in the `content-disposition` h
 1. Use the command `openlist version`, the console will output
 2. OpenList Manage --> Settings --> Site --> `Version` option
 
-Why is the old version of OpenList still after the update? Generally, docker encounters this problem. You can [**refer to the QA answer mentioned below**](../guide/install/docker.md#how-to-update-docker-installation)
+Why is the old version of OpenList still after the update? Generally, docker encounters this problem. You can [**refer to this**](../guide/installation/docker.md#update)
 :::
 :::zh-CN
 
 1. 使用命令 `openlist version`，控制台会输出
 2. OpenList后台 --> 设置 --> 站点 --> `版本`选项
 
-为什么更新后还是旧版的OpenList，一般遇到这个问题的都是docker，可以[**参考这个 下面提到的QA回答**](../guide/install/docker.md#docker安装怎么更新)
+为什么更新后还是旧版的OpenList，一般遇到这个问题的都是docker，可以[**参考这个**](../guide/installation/docker.md#更新)
 :::
 
 ## OpenList's download "Download" option suddenly blank, no content { lang="en" }
@@ -650,15 +659,5 @@ Maybe other links are blocked, manually add the blocked domain name to the white
 通过控制台发现"**https://g.alicdn.com/IMM/office-js/1.1.5/aliyun-web-office-sdk.min.js**" 被拦截了，
 
 也许拦截了其它链接，手动将被拦截域名添加到白名单或者关闭插件，也可能是插件抽风了
-:::
-
-## Why is the text file garbled? { lang="en" }
-
-## 为什么文本文件乱码? { lang="zh-CN" }
-
-:::en
-Only utf-8 encoding is supported. See also: [#4131](https://github.com/alist-org/alist/issues/4131)
-:::
-:::zh-CN
-仅支持utf-8编码。相关: [#4131](https://github.com/alist-org/alist/issues/4131)
+![faq](/img/faq/download.png)
 :::
