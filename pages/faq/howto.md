@@ -80,38 +80,8 @@ location /openlist/ {
 ## 忘记密码怎么办？ { lang="zh-CN" }
 
 :::en
-If you are the owner of the site, you can get the admin's info by run `./openlist admin` in the terminal.
-Otherwise you can ask the owner to reset the password.
-:::
-:::zh-CN
-如果您是站点的所有者，您可以通过在终端中运行 `./openlist admin` 来获取管理员账号信息。
+The current version changes the password to an encrypted hash value, and the password cannot be calculated directly. If the password is forgotten, it can only be re-**`randomly generated`** or **`manually set`**
 
-否则，您可以要求站点所有者重置密码。
-:::
-
-:::en
-:::tip
-You need to stop openlist server first if the version of your openlist is v3.9.0 or later as this pr: https://github.com/alist-org/alist/pull/3074
-:::
-:::zh-CN
-:::tip
-如果你使用v3.9.0及以上版本，你需要先停止alist服务因为这个pr: https://github.com/alist-org/alist/pull/3074
-:::
-
-### Lower than v3.25.0{ lang="en" }
-
-### 低于v3.25.0版本 { lang="zh-CN" }
-
-```bash
-./openlist admin
-```
-
-### Higher than v3.25.0 { lang="en" }
-
-### 高于v3.25.0版本 { lang="zh-CN" }
-
-:::en
-Versions above 3.25.0 change the password to an encrypted hash value, and the password cannot be calculated directly. If the password is forgotten, it can only be re-**`randomly generated`** or **`manually set`**
 
 ```bash
 # Randomly generate a password
@@ -122,7 +92,7 @@ Versions above 3.25.0 change the password to an encrypted hash value, and the pa
 
 :::
 :::zh-CN
-3.25.0以上版本将密码改成加密方式存储的hash值，无法直接反算出密码，如果忘记了密码只能通过重新 **`随机生成`** 或者 **`手动设置`**
+当前版本将密码改成加密方式存储的hash值，无法直接反算出密码，如果忘记了密码只能通过重新 **`随机生成`** 或者 **`手动设置`**
 
 ```bash
 # 随机生成一个密码
@@ -138,10 +108,10 @@ Versions above 3.25.0 change the password to an encrypted hash value, and the pa
 ## 如何修改监听端口​ { lang="zh-CN" }
 
 :::en
-Refer to [config](../config/configuration.md#port)
+Refer to [config](../configuration/configuration#scheme)
 :::
 :::zh-CN
-参考[config](../config/configuration.md#port)
+参考[config](../configuration/configuration#scheme)
 :::
 
 ## How to upgrade { lang="en" }
@@ -202,7 +172,7 @@ It may be that the risk detection system has been triggered. Please changing the
 
 - Click Edit, write the verification code you just saw into the configuration and click Save
 - Click Edit and turn on the Do not use OCR button
-- Or build it yourself [**Ocr interface**](../config/global.md#ocr-api)
+- Or build it yourself [**Ocr interface**](../configuration/global#ocr-api)
 - **189 Cloud** Driver has been replaced with sliding verification code because web login has been replaced.**No longer supports OCR and manual input**, if the verification code needs to be used, please use the addition of `Cookie to log in` or use the `189 Cloud PC` Driver. Note_that_it_is_189_Cloud_driver_is_not_189_Cloud_PC.
 
 :::
@@ -210,7 +180,7 @@ It may be that the risk detection system has been triggered. Please changing the
 
 - 点击编辑，将刚才看到的验证码输入配置中，并点击保存。
 - 点击编辑并开启“不使用 OCR”按钮。
-- 或者自行搭建 [**OCR 接口**](../config/global.md#ocr-api)。
+- 或者自行搭建 [**OCR 接口**](../configuration/global#ocr-接口)。
 - **天翼云盘** 驱动已被滑动验证码取代，因为网页登录方式已更改。**不再支持 OCR 和手动输入**，如果需要使用验证码，请使用 `Cookie 登录` 或者使用 `天翼云盘客户端` 驱动。注意：天翼云盘 驱动与 天翼云盘客户端 驱动不同。
 
 :::
@@ -224,43 +194,6 @@ For network problems such as these, please troubleshoot and solve them yourself.
 :::
 :::zh-CN
 诸如此类的网络问题，请自行排查解决。不要为此提出任何的issue
-:::
-
-## How to add epub reading { lang="en" }
-
-## 怎么添加epub阅读器 { lang="zh-CN" }
-
-:::en
-Background --> Settings --> Preview --> Iframe preview, written behind the PDF
-
-```html{2-5}
- /*The comma below is also oh, don’t copy this comment, start copying from the second line*/
-,
-  "epub": {
-    "EPUB.js":"/static/epub.js/viewer.html?url=$e_url"
-  }
-```
-
-Version 3.7.x and higher already support ".epub" reading
-But you need to add it manually (because the database has already been created, it is not good to overwrite it for you, and you will make mistakes)
-If it is the first installation and startup (version 3.7.x and higher), no need to add it manually
-If the secondary directory reverse generation is set, please add the corresponding prefix in [site_url](../config/configuration.md#site-url), and then restart OpenList to take effect
-:::
-:::zh-CN
-后台 ——>设置——>预览——>Iframe 预览，写在PDF后面
-
-```html{2-5}
-/*下面的这个逗号也是哦，这个注释就不要复制了，从第二行开始复制*/
-,
-  "epub": {
-    "EPUB.js":"/static/epub.js/viewer.html?url=$e_url"
-  }
-```
-
-3.7.x 版本及更高的版本已经支持 ".epub" 阅读
-但是需要自己手动添加(因为已经创建过数据库了 不好给你覆盖会出错)
-如果是第一次安装启动（3.7.x版本及更高的版本）不用手动添加
-如果设置了二级目录反代，请在[site_url](../config/configuration.md#site-url)中自行添加相应前缀，然后重启OpenList才会生效
 :::
 
 ### How to quickly locate bugs { lang="en" }
