@@ -13,7 +13,6 @@ categories:
 tag:
   - Storage
   - Guide
-  - '虚拟存储'
 # this page is sticky in article list
 sticky: true
 # this page will appear in starred articles
